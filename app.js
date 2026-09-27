@@ -180,23 +180,8 @@ const renderCategoryPage = (products, categories) => {
   title.textContent = category.name;
   summary.textContent = `Discover hand-knitted ${category.name.toLowerCase()} pieces and gift ideas.`;
   grid.replaceChildren(...filteredProducts.map(createProductCard));
-  grid.hidden = filteredProducts.length === 0;
-  empty.hidden = filteredProducts.length > 0;
-
-  if (filteredProducts.length === 0) {
-    const heading = empty.querySelector("h2");
-    const copy = empty.querySelector("p");
-
-    if (heading) {
-      heading.textContent = "No products yet";
-    }
-
-    if (copy) {
-      copy.textContent =
-        "This collection is ready for new pieces as the catalogue grows.";
-    }
-  }
-
+  grid.hidden = false;
+  empty.hidden = true;
   document.title = `Bubbaknits | ${category.name}`;
   setBusyState(grid, false);
 };

@@ -40,6 +40,12 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
 .wrap {
   width: var(--wrap);
   margin: 0 auto;
