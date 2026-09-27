@@ -163,6 +163,7 @@ const renderCategoryPage = (products, categories) => {
     title.textContent = "Categories";
     summary.textContent = "The requested collection could not be found.";
     empty.hidden = false;
+    grid.hidden = true;
     grid.replaceChildren();
     document.title = "Bubbaknits | Categories";
     setBusyState(grid, false);
@@ -176,6 +177,7 @@ const renderCategoryPage = (products, categories) => {
   title.textContent = category.name;
   summary.textContent = `Discover hand-knitted ${category.name.toLowerCase()} pieces and gift ideas.`;
   grid.replaceChildren(...filteredProducts.map(createProductCard));
+  grid.hidden = filteredProducts.length === 0;
   empty.hidden = filteredProducts.length > 0;
 
   if (filteredProducts.length === 0) {
@@ -239,6 +241,7 @@ const renderLoadError = () => {
     }
 
     if (grid) {
+      grid.hidden = true;
       grid.replaceChildren();
       setBusyState(grid, false);
     }
