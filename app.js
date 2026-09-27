@@ -36,6 +36,19 @@ const renderNav = (categories) => {
     return;
   }
 
+  const currentPage = document.body.dataset.page;
+  const aboutItem = document.createElement("li");
+  const aboutLink = document.createElement("a");
+
+  aboutLink.href = "./about.html";
+  aboutLink.textContent = "About";
+
+  if (currentPage === "about") {
+    aboutLink.setAttribute("aria-current", "page");
+  }
+
+  aboutItem.append(aboutLink);
+
   const items = categories.map((category) => {
     const item = document.createElement("li");
     const link = document.createElement("a");
@@ -46,6 +59,21 @@ const renderNav = (categories) => {
 
     return item;
   });
+
+  items.unshift(aboutItem);
+
+  const contactItem = document.createElement("li");
+  const contactLink = document.createElement("a");
+
+  contactLink.href = "./contact.html";
+  contactLink.textContent = "Contact";
+
+  if (currentPage === "contact") {
+    contactLink.setAttribute("aria-current", "page");
+  }
+
+  contactItem.append(contactLink);
+  items.push(contactItem);
 
   nav.replaceChildren(...items);
 };
@@ -291,11 +319,76 @@ const renderLoadError = () => {
   }
 };
 
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const setFormStatus = (status, message, isError) => {
+  if (!status) {
+    return;
+  }
+
+  status.hidden = false;
+  status.textContent = message;
+  status.classList.toggle("form-status-error", isError);
+  status.classList.toggle("form-status-success", !isError);
+};
+
+const initContactForm = () => {
+  const form = document.querySelector("#contact-form");
+  const status = document.querySelector("#contact-status");
+
+  if (!form) {
+    return;
+  }
+
+  const fields = [
+    {
+      input: document.querySelector("#contact-name"),
+      error: document.querySelector("#contact-name-error"),
+      isValid: (value) => value.trim().length > 0,
+    },
+    {
+      input: document.querySelector("#contact-email"),
+      error: document.querySelector("#contact-email-error"),
+      isValid: (value) => EMAIL_PATTERN.test(value.trim()),
+    },
+    {
+      input: document.querySelector("#contact-message"),
+      error: document.querySelector("#contact-message-error"),
+      isValid: (value) => value.trim().length > 0,
+    },
+  ].filter((field) => field.input && field.error);
+
+  form.addEventListener("submit", (event) => {
+    const isValid = fields.reduce((allValid, { input, error, isValid: check }) => {
+      const fieldValid = check(input.value);
+
+      error.hidden = fieldValid;
+      input.setAttribute("aria-invalid", String(!fieldValid));
+
+      return allValid && fieldValid;
+    }, true);
+
+    if (!isValid) {
+      event.preventDefault();
+      setFormStatus(status, "Please fix the highlighted fields and try again.", true);
+      return;
+    }
+
+    // form still submits via its mailto action, since there is no backend yet
+    setFormStatus(status, "Opening your email app with your message ready to send…", false);
+  });
+};
+
 const init = async () => {
+  const page = document.body.dataset.page;
+
+  if (page === "contact") {
+    initContactForm();
+  }
+
   try {
     const { configuredCategories, products } = await loadCatalog();
     const categories = buildCategories(products, configuredCategories);
-    const page = document.body.dataset.page;
 
     renderNav(categories);
 
