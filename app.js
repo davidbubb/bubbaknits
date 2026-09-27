@@ -98,8 +98,8 @@ const buildCategories = (products) => {
   const categories = new Map();
 
   products.forEach((product) => {
-    product.categories.forEach((name) => {
-      const slug = slugify(name);
+    product.categories.forEach((name, index) => {
+      const slug = product.categorySlugs[index];
       const existing = categories.get(slug);
 
       if (existing) {
@@ -121,7 +121,12 @@ const loadProducts = async () => {
     throw new Error("Unable to load product data");
   }
 
-  return response.json();
+  const products = await response.json();
+
+  return products.map((product) => ({
+    ...product,
+    categorySlugs: product.categories.map((category) => slugify(category)),
+  }));
 };
 
 const renderHomePage = (products, categories) => {
@@ -170,9 +175,7 @@ const renderCategoryPage = (products, categories) => {
     return;
   }
 
-  const filteredProducts = products.filter((product) =>
-    product.categories.some((name) => slugify(name) === slug),
-  );
+  const filteredProducts = products.filter((product) => product.categorySlugs.includes(slug));
 
   title.textContent = category.name;
   summary.textContent = `Discover hand-knitted ${category.name.toLowerCase()} pieces and gift ideas.`;
