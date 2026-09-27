@@ -9,6 +9,12 @@ const slugify = (value) =>
 
 const formatPrice = (value) => `£${Number(value).toFixed(2)}`;
 
+const setBusyState = (element, isBusy) => {
+  if (element) {
+    element.setAttribute("aria-busy", String(isBusy));
+  }
+};
+
 const createMessageCard = (title, message) => {
   const card = document.createElement("div");
   const heading = document.createElement("h2");
@@ -66,7 +72,7 @@ const createProductCard = (product) => {
   return card;
 };
 
-const createCategoryCard = (category, count) => {
+const createCategoryCard = (category) => {
   const card = document.createElement("a");
   const body = document.createElement("div");
   const badge = document.createElement("span");
@@ -78,7 +84,7 @@ const createCategoryCard = (category, count) => {
   badge.className = "category-badge";
 
   card.href = `./category.html?category=${encodeURIComponent(category.slug)}`;
-  badge.textContent = `${count} item${count === 1 ? "" : "s"}`;
+  badge.textContent = `${category.count} item${category.count === 1 ? "" : "s"}`;
   title.textContent = category.name;
   copy.textContent = `Browse the ${category.name.toLowerCase()} collection.`;
 
@@ -89,9 +95,23 @@ const createCategoryCard = (category, count) => {
 };
 
 const buildCategories = (products) => {
-  const names = [...new Set(products.flatMap((product) => product.categories))];
+  const categories = new Map();
 
-  return names.map((name) => ({ name, slug: slugify(name) }));
+  products.forEach((product) => {
+    product.categories.forEach((name) => {
+      const slug = slugify(name);
+      const existing = categories.get(slug);
+
+      if (existing) {
+        existing.count += 1;
+        return;
+      }
+
+      categories.set(slug, { name, slug, count: 1 });
+    });
+  });
+
+  return [...categories.values()];
 };
 
 const loadProducts = async () => {
@@ -114,19 +134,14 @@ const renderHomePage = (products, categories) => {
       .map(createProductCard);
 
     featuredGrid.replaceChildren(...featuredCards);
+    setBusyState(featuredGrid, false);
   }
 
   if (categoryGrid) {
-    const cards = categories
-      .map((category) => {
-        const count = products.filter((product) =>
-          product.categories.some((name) => slugify(name) === category.slug),
-        ).length;
-
-        return createCategoryCard(category, count);
-      });
+    const cards = categories.map((category) => createCategoryCard(category));
 
     categoryGrid.replaceChildren(...cards);
+    setBusyState(categoryGrid, false);
   }
 };
 
@@ -150,6 +165,7 @@ const renderCategoryPage = (products, categories) => {
     empty.hidden = false;
     grid.replaceChildren();
     document.title = "Bubbaknits | Categories";
+    setBusyState(grid, false);
     return;
   }
 
@@ -160,7 +176,24 @@ const renderCategoryPage = (products, categories) => {
   title.textContent = category.name;
   summary.textContent = `Discover hand-knitted ${category.name.toLowerCase()} pieces and gift ideas.`;
   grid.replaceChildren(...filteredProducts.map(createProductCard));
+  empty.hidden = filteredProducts.length > 0;
+
+  if (filteredProducts.length === 0) {
+    const heading = empty.querySelector("h2");
+    const copy = empty.querySelector("p");
+
+    if (heading) {
+      heading.textContent = "No products yet";
+    }
+
+    if (copy) {
+      copy.textContent =
+        "This collection is ready for new pieces as the catalogue grows.";
+    }
+  }
+
   document.title = `Bubbaknits | ${category.name}`;
+  setBusyState(grid, false);
 };
 
 const renderLoadError = () => {
@@ -176,6 +209,7 @@ const renderLoadError = () => {
 
     if (featuredGrid) {
       featuredGrid.replaceChildren(message);
+      setBusyState(featuredGrid, false);
     }
 
     if (categoryGrid) {
@@ -185,6 +219,7 @@ const renderLoadError = () => {
           "Category links will appear here once the catalogue loads correctly.",
         ),
       );
+      setBusyState(categoryGrid, false);
     }
   }
 
@@ -205,6 +240,7 @@ const renderLoadError = () => {
 
     if (grid) {
       grid.replaceChildren();
+      setBusyState(grid, false);
     }
 
     if (empty) {
