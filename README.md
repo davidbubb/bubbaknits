@@ -11,7 +11,12 @@ A first-pass static website concept for showcasing knitted children's clothes an
 
 ## Managing products
 
-Update `/data/products.json` to change the catalogue. Each product entry includes:
+Update `/data/products.json` to change the catalogue. The file can define:
+
+- `categories` – the category pages/navigation you want available
+- `products` – the catalogue entries to display
+
+Each product entry includes:
 
 - `name`
 - `price`
@@ -19,4 +24,4 @@ Update `/data/products.json` to change the catalogue. Each product entry include
 - `categories`
 - `featured`
 
-Categories are generated automatically from the product data and used for navigation and category pages.
+Category navigation and category pages are driven by the JSON file, with product counts calculated from the current product assignments.

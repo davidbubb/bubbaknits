@@ -94,8 +94,13 @@ const createCategoryCard = (category) => {
   return card;
 };
 
-const buildCategories = (products) => {
+const buildCategories = (products, configuredCategories = []) => {
   const categories = new Map();
+
+  configuredCategories.forEach((name) => {
+    const slug = slugify(name);
+    categories.set(slug, { name, slug, count: 0 });
+  });
 
   products.forEach((product) => {
     product.categories.forEach((name, index) => {
@@ -114,19 +119,21 @@ const buildCategories = (products) => {
   return [...categories.values()];
 };
 
-const loadProducts = async () => {
+const loadCatalog = async () => {
   const response = await fetch(DATA_PATH);
 
   if (!response.ok) {
     throw new Error("Unable to load product data");
   }
 
-  const products = await response.json();
-
-  return products.map((product) => ({
+  const payload = await response.json();
+  const configuredCategories = Array.isArray(payload) ? [] : payload.categories || [];
+  const products = (Array.isArray(payload) ? payload : payload.products || []).map((product) => ({
     ...product,
     categorySlugs: product.categories.map((category) => slugify(category)),
   }));
+
+  return { configuredCategories, products };
 };
 
 const renderHomePage = (products, categories) => {
@@ -138,14 +145,32 @@ const renderHomePage = (products, categories) => {
       .filter((product) => product.featured)
       .map(createProductCard);
 
-    featuredGrid.replaceChildren(...featuredCards);
+    featuredGrid.replaceChildren(
+      ...(featuredCards.length
+        ? featuredCards
+        : [
+            createMessageCard(
+              "Featured products coming soon",
+              "Mark products as featured in the catalogue data to highlight them here.",
+            ),
+          ]),
+    );
     setBusyState(featuredGrid, false);
   }
 
   if (categoryGrid) {
     const cards = categories.map((category) => createCategoryCard(category));
 
-    categoryGrid.replaceChildren(...cards);
+    categoryGrid.replaceChildren(
+      ...(cards.length
+        ? cards
+        : [
+            createMessageCard(
+              "Categories coming soon",
+              "Add categories in the catalogue data to show navigation here.",
+            ),
+          ]),
+    );
     setBusyState(categoryGrid, false);
   }
 };
@@ -180,8 +205,23 @@ const renderCategoryPage = (products, categories) => {
   title.textContent = category.name;
   summary.textContent = `Discover hand-knitted pieces and gift ideas in the ${category.name} collection.`;
   grid.replaceChildren(...filteredProducts.map(createProductCard));
-  grid.hidden = false;
-  empty.hidden = true;
+  grid.hidden = filteredProducts.length === 0;
+  empty.hidden = filteredProducts.length > 0;
+
+  if (filteredProducts.length === 0) {
+    const heading = empty.querySelector("h2");
+    const copy = empty.querySelector("p");
+
+    if (heading) {
+      heading.textContent = "Products coming soon";
+    }
+
+    if (copy) {
+      copy.textContent =
+        "This category is ready for new additions as the catalogue grows.";
+    }
+  }
+
   document.title = `Bubbaknits | ${category.name}`;
   setBusyState(grid, false);
 };
@@ -253,8 +293,8 @@ const renderLoadError = () => {
 
 const init = async () => {
   try {
-    const products = await loadProducts();
-    const categories = buildCategories(products);
+    const { configuredCategories, products } = await loadCatalog();
+    const categories = buildCategories(products, configuredCategories);
     const page = document.body.dataset.page;
 
     renderNav(categories);
