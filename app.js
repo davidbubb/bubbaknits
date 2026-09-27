@@ -86,7 +86,7 @@ const createCategoryCard = (category) => {
   card.href = `./category.html?category=${encodeURIComponent(category.slug)}`;
   badge.textContent = `${category.count} item${category.count === 1 ? "" : "s"}`;
   title.textContent = category.name;
-  copy.textContent = `Browse the ${category.name.toLowerCase()} collection.`;
+  copy.textContent = "View this collection.";
 
   body.append(badge, title, copy);
   card.append(body);
@@ -178,7 +178,7 @@ const renderCategoryPage = (products, categories) => {
   const filteredProducts = products.filter((product) => product.categorySlugs.includes(slug));
 
   title.textContent = category.name;
-  summary.textContent = `Discover hand-knitted ${category.name.toLowerCase()} pieces and gift ideas.`;
+  summary.textContent = `Discover hand-knitted pieces and gift ideas in the ${category.name} collection.`;
   grid.replaceChildren(...filteredProducts.map(createProductCard));
   grid.hidden = false;
   empty.hidden = true;
