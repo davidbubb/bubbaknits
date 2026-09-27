@@ -1,0 +1,310 @@
+:root {
+  --background: #f8f4ef;
+  --surface: #fffdf9;
+  --surface-soft: #f2eae0;
+  --text: #47362f;
+  --text-soft: #715e54;
+  --border: #dbcdbd;
+  --accent: #8f6f62;
+  --accent-strong: #71584d;
+  --shadow: 0 20px 40px rgba(71, 54, 47, 0.08);
+  --radius-large: 32px;
+  --radius-medium: 22px;
+  --radius-small: 16px;
+  --wrap: min(1120px, calc(100vw - 2rem));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  width: var(--wrap);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  background: rgba(248, 244, 239, 0.92);
+  border-bottom: 1px solid rgba(219, 205, 189, 0.7);
+}
+
+.header-bar,
+.footer-layout,
+.hero-grid,
+.section-heading {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.header-bar,
+.footer-layout {
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a,
+.text-link,
+.button {
+  transition: 0.2s ease;
+}
+
+.nav-list a {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  color: var(--text-soft);
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.hero,
+.category-hero {
+  padding: 4rem 0 2rem;
+}
+
+.hero-grid {
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.hero-copy,
+.hero-panel,
+.product-card,
+.category-card,
+.empty-state {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  flex: 2 1 620px;
+  padding: 3rem;
+  border-radius: var(--radius-large);
+}
+
+.hero-panel {
+  flex: 1 1 260px;
+  border-radius: var(--radius-large);
+  padding: 2rem;
+  align-self: flex-end;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.intro,
+.footer-copy,
+.hero-panel p,
+.product-meta p,
+.empty-state p {
+  color: var(--text-soft);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  background: var(--accent-strong);
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section-soft {
+  background: var(--surface-soft);
+  padding: 4rem 0;
+}
+
+.section-heading {
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.text-link {
+  color: var(--accent-strong);
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  opacity: 0.8;
+}
+
+.product-grid,
+.category-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.product-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.category-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.product-card,
+.category-card,
+.empty-state {
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+}
+
+.product-card img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  width: 100%;
+  background: #eee1d6;
+}
+
+.product-meta,
+.category-card-body {
+  padding: 1.15rem 1.15rem 1.3rem;
+}
+
+.product-meta h3,
+.category-card h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.2rem;
+}
+
+.product-price {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-card-body p {
+  margin-bottom: 0;
+}
+
+.category-badge {
+  display: inline-flex;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  width: fit-content;
+}
+
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(219, 205, 189, 0.7);
+}
+
+@media (max-width: 720px) {
+  .header-bar,
+  .footer-layout,
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-copy,
+  .hero-panel {
+    padding: 2rem;
+  }
+}

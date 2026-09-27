@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Rosebud Cardigan",
+    "price": 42,
+    "image": "./assets/images/rosebud-cardigan.svg",
+    "categories": ["Girls", "Jumpers"],
+    "featured": true
+  },
+  {
+    "name": "Sailor Stripe Jumper",
+    "price": 39,
+    "image": "./assets/images/sailor-stripe-jumper.svg",
+    "categories": ["Boys", "Jumpers"],
+    "featured": true
+  },
+  {
+    "name": "Cloud Bonnet Set",
+    "price": 28,
+    "image": "./assets/images/cloud-bonnet-set.svg",
+    "categories": ["Girls"],
+    "featured": false
+  },
+  {
+    "name": "Woodland Romper",
+    "price": 36,
+    "image": "./assets/images/woodland-romper.svg",
+    "categories": ["Boys"],
+    "featured": false
+  },
+  {
+    "name": "Heirloom Bunny",
+    "price": 24,
+    "image": "./assets/images/heirloom-bunny.svg",
+    "categories": ["Toys"],
+    "featured": true
+  },
+  {
+    "name": "Bedtime Bear",
+    "price": 26,
+    "image": "./assets/images/bedtime-bear.svg",
+    "categories": ["Toys"],
+    "featured": true
+  }
+]
