@@ -9,6 +9,20 @@ const slugify = (value) =>
 
 const formatPrice = (value) => `£${Number(value).toFixed(2)}`;
 
+const createMessageCard = (title, message) => {
+  const card = document.createElement("div");
+  const heading = document.createElement("h2");
+  const copy = document.createElement("p");
+
+  card.className = "empty-state";
+  heading.textContent = title;
+  copy.textContent = message;
+
+  card.append(heading, copy);
+
+  return card;
+};
+
 const renderNav = (categories) => {
   const nav = document.querySelector("#site-nav");
 
@@ -16,33 +30,63 @@ const renderNav = (categories) => {
     return;
   }
 
-  nav.innerHTML = categories
-    .map(
-      (category) =>
-        `<li><a href="./category.html?category=${category.slug}">${category.name}</a></li>`,
-    )
-    .join("");
+  const items = categories.map((category) => {
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+
+    link.href = `./category.html?category=${encodeURIComponent(category.slug)}`;
+    link.textContent = category.name;
+    item.append(link);
+
+    return item;
+  });
+
+  nav.replaceChildren(...items);
 };
 
-const productCard = (product) => `
-  <article class="product-card">
-    <img src="${product.image}" alt="${product.name}" />
-    <div class="product-meta">
-      <h3>${product.name}</h3>
-      <p class="product-price">${formatPrice(product.price)}</p>
-    </div>
-  </article>
-`;
+const createProductCard = (product) => {
+  const card = document.createElement("article");
+  const image = document.createElement("img");
+  const meta = document.createElement("div");
+  const title = document.createElement("h3");
+  const price = document.createElement("p");
 
-const categoryCard = (category, count) => `
-  <a class="category-card" href="./category.html?category=${category.slug}">
-    <div class="category-card-body">
-      <span class="category-badge">${count} item${count === 1 ? "" : "s"}</span>
-      <h3>${category.name}</h3>
-      <p>Browse the ${category.name.toLowerCase()} collection.</p>
-    </div>
-  </a>
-`;
+  card.className = "product-card";
+  meta.className = "product-meta";
+  price.className = "product-price";
+
+  image.src = product.image;
+  image.alt = product.name;
+  title.textContent = product.name;
+  price.textContent = formatPrice(product.price);
+
+  meta.append(title, price);
+  card.append(image, meta);
+
+  return card;
+};
+
+const createCategoryCard = (category, count) => {
+  const card = document.createElement("a");
+  const body = document.createElement("div");
+  const badge = document.createElement("span");
+  const title = document.createElement("h3");
+  const copy = document.createElement("p");
+
+  card.className = "category-card";
+  body.className = "category-card-body";
+  badge.className = "category-badge";
+
+  card.href = `./category.html?category=${encodeURIComponent(category.slug)}`;
+  badge.textContent = `${count} item${count === 1 ? "" : "s"}`;
+  title.textContent = category.name;
+  copy.textContent = `Browse the ${category.name.toLowerCase()} collection.`;
+
+  body.append(badge, title, copy);
+  card.append(body);
+
+  return card;
+};
 
 const buildCategories = (products) => {
   const names = [...new Set(products.flatMap((product) => product.categories))];
@@ -65,22 +109,24 @@ const renderHomePage = (products, categories) => {
   const categoryGrid = document.querySelector("#shop-categories");
 
   if (featuredGrid) {
-    featuredGrid.innerHTML = products
+    const featuredCards = products
       .filter((product) => product.featured)
-      .map(productCard)
-      .join("");
+      .map(createProductCard);
+
+    featuredGrid.replaceChildren(...featuredCards);
   }
 
   if (categoryGrid) {
-    categoryGrid.innerHTML = categories
+    const cards = categories
       .map((category) => {
         const count = products.filter((product) =>
           product.categories.some((name) => slugify(name) === category.slug),
         ).length;
 
-        return categoryCard(category, count);
-      })
-      .join("");
+        return createCategoryCard(category, count);
+      });
+
+    categoryGrid.replaceChildren(...cards);
   }
 };
 
@@ -102,7 +148,7 @@ const renderCategoryPage = (products, categories) => {
     title.textContent = "Categories";
     summary.textContent = "The requested collection could not be found.";
     empty.hidden = false;
-    grid.innerHTML = "";
+    grid.replaceChildren();
     document.title = "Bubbaknits | Categories";
     return;
   }
@@ -113,8 +159,69 @@ const renderCategoryPage = (products, categories) => {
 
   title.textContent = category.name;
   summary.textContent = `Discover hand-knitted ${category.name.toLowerCase()} pieces and gift ideas.`;
-  grid.innerHTML = filteredProducts.map(productCard).join("");
+  grid.replaceChildren(...filteredProducts.map(createProductCard));
   document.title = `Bubbaknits | ${category.name}`;
+};
+
+const renderLoadError = () => {
+  const page = document.body.dataset.page;
+
+  if (page === "home") {
+    const featuredGrid = document.querySelector("#featured-grid");
+    const categoryGrid = document.querySelector("#shop-categories");
+    const message = createMessageCard(
+      "Catalogue unavailable",
+      "We couldn't load the product catalogue just now. Please try again shortly.",
+    );
+
+    if (featuredGrid) {
+      featuredGrid.replaceChildren(message);
+    }
+
+    if (categoryGrid) {
+      categoryGrid.replaceChildren(
+        createMessageCard(
+          "Categories unavailable",
+          "Category links will appear here once the catalogue loads correctly.",
+        ),
+      );
+    }
+  }
+
+  if (page === "category") {
+    const title = document.querySelector("#category-title");
+    const summary = document.querySelector("#category-summary");
+    const grid = document.querySelector("#category-grid");
+    const empty = document.querySelector("#category-empty");
+
+    if (title) {
+      title.textContent = "Catalogue unavailable";
+    }
+
+    if (summary) {
+      summary.textContent =
+        "We couldn't load the collection right now. Please try again shortly.";
+    }
+
+    if (grid) {
+      grid.replaceChildren();
+    }
+
+    if (empty) {
+      empty.hidden = false;
+      const heading = empty.querySelector("h2");
+      const copy = empty.querySelector("p");
+
+      if (heading) {
+        heading.textContent = "Products unavailable";
+      }
+
+      if (copy) {
+        copy.textContent =
+          "The product catalogue could not be loaded for this page.";
+      }
+    }
+  }
 };
 
 const init = async () => {
@@ -134,6 +241,7 @@ const init = async () => {
     }
   } catch (error) {
     console.error(error);
+    renderLoadError();
   }
 };
 
