@@ -83,9 +83,14 @@ button:focus-visible {
 }
 
 .brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.brand img {
+  width: min(140px, 38vw);
+  height: auto;
 }
 
 .nav-list {
