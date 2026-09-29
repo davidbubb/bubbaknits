@@ -8,6 +8,7 @@ A first-pass static website concept for showcasing knitted children's clothes an
 - `/category.html` – reusable category page driven by the query string
 - `/about.html` – brand story page, currently filled with sample text to replace
 - `/contact.html` – contact details and a contact form
+- `/terms.html` – pricing, privacy, returns and delivery terms
 - `/404.html` – themed not-found page for broken or missing links
 - `/data/products.json` – editable product catalogue
 - `/assets/images/` – local placeholder artwork for products and the favicon

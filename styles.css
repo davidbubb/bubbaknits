@@ -526,6 +526,29 @@ h2 {
   padding: 2.5rem;
 }
 
+.terms-content {
+  max-width: 800px;
+}
+
+.terms-content section + section {
+  margin-top: 2rem;
+}
+
+.terms-content h2 {
+  margin-bottom: 0.5rem;
+}
+
+.terms-content p {
+  color: var(--text-soft);
+}
+
+.terms-content ul {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.25rem;
+  color: var(--text-soft);
+}
+
 .about-layout h2:not(:first-child) {
   margin-top: 1.75rem;
 }

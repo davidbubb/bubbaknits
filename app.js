@@ -75,6 +75,19 @@ const renderNav = (categories) => {
   contactItem.append(contactLink);
   items.push(contactItem);
 
+  const termsItem = document.createElement("li");
+  const termsLink = document.createElement("a");
+
+  termsLink.href = "./terms.html";
+  termsLink.textContent = "Terms";
+
+  if (currentPage === "terms") {
+    termsLink.setAttribute("aria-current", "page");
+  }
+
+  termsItem.append(termsLink);
+  items.push(termsItem);
+
   nav.replaceChildren(...items);
 };
 
