@@ -6,42 +6,76 @@
       "price": 42,
       "image": "./assets/images/rosebud-cardigan.svg",
       "categories": ["Girls", "Jumpers"],
-      "featured": true
+      "featured": true,
+      "description": "A button-front cardigan with a delicate rosebud yoke, knitted for easy layering through the seasons.",
+      "materials": "100% merino wool",
+      "care": "Hand wash cool and dry flat.",
+      "sizes": ["0–6 months", "6–12 months", "1–2 years", "3–4 years"],
+      "stock": 2,
+      "leadTime": "Ready to ship in 3–5 working days"
     },
     {
       "name": "Sailor Stripe Jumper",
       "price": 39,
       "image": "./assets/images/sailor-stripe-jumper.svg",
       "categories": ["Boys", "Jumpers"],
-      "featured": true
+      "featured": true,
+      "description": "A classic breton-stripe jumper in soft cotton, made for everyday adventures.",
+      "materials": "100% organic cotton",
+      "care": "Machine wash cool on a gentle cycle, dry flat.",
+      "sizes": ["6–12 months", "1–2 years", "3–4 years", "5–6 years"],
+      "stock": 4,
+      "leadTime": "Ready to ship in 3–5 working days"
     },
     {
       "name": "Cloud Bonnet Set",
       "price": 28,
       "image": "./assets/images/cloud-bonnet-set.svg",
       "categories": ["Girls"],
-      "featured": false
+      "featured": false,
+      "description": "A feather-light bonnet and mittens set, perfect for new arrivals and christening gifts.",
+      "materials": "Baby alpaca and silk blend",
+      "care": "Hand wash cool and dry flat.",
+      "sizes": ["Newborn", "0–6 months"],
+      "stock": 3,
+      "leadTime": "Ready to ship in 3–5 working days"
     },
     {
       "name": "Woodland Romper",
       "price": 36,
       "image": "./assets/images/woodland-romper.svg",
       "categories": ["Boys"],
-      "featured": false
+      "featured": false,
+      "description": "A sturdy knitted romper with woodland colourwork and adjustable straps that grow with them.",
+      "materials": "100% merino wool",
+      "care": "Hand wash cool and dry flat.",
+      "sizes": ["0–6 months", "6–12 months", "1–2 years"],
+      "stock": 1,
+      "leadTime": "Ready to ship in 3–5 working days"
     },
     {
       "name": "Heirloom Bunny",
       "price": 24,
       "image": "./assets/images/heirloom-bunny.svg",
       "categories": ["Toys"],
-      "featured": true
+      "featured": true,
+      "description": "A hand-stitched bunny with embroidered features and a removable knitted jumper — made to be treasured.",
+      "materials": "Organic cotton with hypoallergenic stuffing",
+      "care": "Spot clean only.",
+      "stock": 1,
+      "leadTime": "Ready to ship in 3–5 working days"
     },
     {
       "name": "Bedtime Bear",
       "price": 26,
       "image": "./assets/images/bedtime-bear.svg",
       "categories": ["Toys"],
-      "featured": true
+      "featured": true,
+      "description": "A snuggly bedtime companion in dusky pastels, with safe embroidered eyes for little ones.",
+      "materials": "Organic cotton with hypoallergenic stuffing",
+      "care": "Spot clean only.",
+      "stock": 0,
+      "leadTime": "Made to order in 2–3 weeks"
     }
   ]
 }

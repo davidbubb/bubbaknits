@@ -61,11 +61,14 @@
         <form
           class="contact-form"
           id="contact-form"
-          action="mailto:hello@bubbaknits.com"
+          action="https://api.web3forms.com/submit"
           method="post"
-          enctype="text/plain"
           novalidate
         >
+          <input type="hidden" name="access_key" value="38f4cf29-4720-44f8-86d9-49dbe22e24fb" />
+          <input type="hidden" name="subject" value="Bubba Knits website enquiry" />
+          <input type="hidden" name="from_name" value="Bubba Knits website" />
+          <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" />
           <div class="form-row">
             <label for="contact-name">Name</label>
             <input type="text" id="contact-name" name="name" autocomplete="name" required />
@@ -97,7 +100,7 @@
 
           <button class="button" type="submit">Send message</button>
           <p class="form-status" id="contact-status" role="status" aria-live="polite" hidden></p>
-          <p class="form-hint">Sending opens your email app with the message ready to go.</p>
+          <p class="form-hint">Messages go straight to our inbox — no email app needed.</p>
         </form>
       </section>
     </main>

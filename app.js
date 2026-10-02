@@ -104,10 +104,31 @@ const createProductCard = (product) => {
 
   image.src = product.image;
   image.alt = product.name;
+  image.loading = "lazy";
   title.textContent = product.name;
   price.textContent = formatPrice(product.price);
 
   meta.append(title, price);
+
+  if (typeof product.stock === "number" && product.stock <= 2) {
+    const badge = document.createElement("p");
+
+    badge.className = "product-stock";
+    badge.textContent =
+      product.stock === 0 ? "Made to order" : `Only ${product.stock} left in stock`;
+
+    meta.append(badge);
+  }
+
+  if (product.leadTime) {
+    const note = document.createElement("p");
+
+    note.className = "product-note";
+    note.textContent = product.leadTime;
+
+    meta.append(note);
+  }
+
   card.append(image, meta);
 
   return card;
@@ -371,7 +392,9 @@ const initContactForm = () => {
     },
   ].filter((field) => field.input && field.error);
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
     const isValid = fields.reduce((allValid, { input, error, isValid: check }) => {
       const fieldValid = check(input.value);
 
@@ -382,13 +405,58 @@ const initContactForm = () => {
     }, true);
 
     if (!isValid) {
-      event.preventDefault();
       setFormStatus(status, "Please fix the highlighted fields and try again.", true);
       return;
     }
 
-    // form still submits via its mailto action, since there is no backend yet
-    setFormStatus(status, "Opening your email app with your message ready to send…", false);
+    const accessKey = form.querySelector('input[name="access_key"]');
+
+    if (!accessKey || !accessKey.value || accessKey.value === "YOUR_WEB3FORMS_ACCESS_KEY") {
+      setFormStatus(
+        status,
+        "This form isn't configured yet. Please email us directly at hello@bubbaknits.com instead.",
+        true,
+      );
+      return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+
+    setFormStatus(status, "Sending your message…", false);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: new FormData(form),
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Message could not be sent");
+      }
+
+      form.reset();
+      setFormStatus(
+        status,
+        "Thank you! Your message has been sent — we'll reply within 2 business days.",
+        false,
+      );
+    } catch (error) {
+      console.error(error);
+      setFormStatus(
+        status,
+        "Sorry, your message couldn't be sent just now. Please email us directly at hello@bubbaknits.com.",
+        true,
+      );
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    }
   });
 };
 

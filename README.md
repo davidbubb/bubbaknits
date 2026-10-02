@@ -12,6 +12,7 @@ A first-pass static website concept for showcasing knitted children's clothes an
 - `/404.html` – themed not-found page for broken or missing links
 - `/data/products.json` – editable product catalogue
 - `/assets/images/` – local placeholder artwork for products and the favicon
+- `/design/` – original design source files (PSD, high-res logo), excluded from the deployed site
 
 ## Deploying to GitHub Pages
 
@@ -29,11 +30,23 @@ supports Pages for private repositories.
 ## Contact form
 
 The contact form on `/contact.html` validates fields in the browser, then
-submits via a `mailto:` action so it works without a backend. Replace
-`hello@bubbaknits.com` in `contact.html` and the site footers with a real
-address, and consider swapping the form for a hosted service (e.g. Formspree
-or Netlify Forms) before launch so submissions don't rely on the visitor's
-email client.
+posts to [Web3Forms](https://web3forms.com) — a free form backend (250
+submissions per month on the free tier) that emails submissions to you without
+needing your own server. If JavaScript is unavailable, the form posts directly
+to the same endpoint.
+
+To activate it:
+
+1. Visit <https://web3forms.com>, enter the email address that should receive
+   enquiries (e.g. `hello@bubbaknits.com`) and copy the access key they send.
+2. Paste the key into the hidden `access_key` input at the top of the form in
+   `contact.html`.
+3. Commit and push — submissions will arrive by email, with no email client
+   needed on the visitor's side.
+
+Until the key is configured the form shows a friendly fallback message
+pointing visitors at the email address instead. [Formspree](https://formspree.io)
+is a good alternative (50 submissions per month free) if you prefer.
 
 ## Managing products
 
@@ -49,5 +62,16 @@ Each product entry includes:
 - `image`
 - `categories`
 - `featured`
+
+Optional fields that enrich the product cards:
+
+- `description` – short summary shown on future product pages
+- `materials` – e.g. `100% merino wool`
+- `care` – washing/care instructions
+- `sizes` – list of available sizes (omit for one-size items like toys)
+- `stock` – items with 1–2 in stock show an "Only N left" badge; `0` shows
+  "Made to order"
+- `leadTime` – delivery note shown under the price, e.g. `Made to order in
+  2–3 weeks`
 
 Category navigation and category pages are driven by the JSON file, with product counts calculated from the current product assignments.
