@@ -1,81 +1,519 @@
 {
-  "categories": ["Girls", "Boys", "Jumpers", "Toys"],
+  "heroFeature": {
+    "mode": "random",
+    "product": "cream-jumper-12-18-months"
+  },
+  "categories": [
+    "Baby Clothes",
+    "Blankets",
+    "Cardigans",
+    "Dresses",
+    "Hats & Sets",
+    "Jumpers",
+    "Newborn",
+    "Toys & Gifts"
+  ],
   "products": [
     {
-      "name": "Rosebud Cardigan",
-      "price": 42,
-      "image": "./assets/images/rosebud-cardigan.svg",
-      "categories": ["Girls", "Jumpers"],
+      "name": "Cape (1–2 years)",
+      "price": 20,
+      "image": "./assets/images/Arun/Arun Cape 1-2 years/arun-cape-1-2-years-01.jpg",
+      "categories": [
+        "Baby Clothes"
+      ],
+      "gallery": [
+        "./assets/images/Arun/Arun Cape 1-2 years/arun-cape-1-2-years-02.jpg",
+        "./assets/images/Arun/Arun Cape 1-2 years/arun-cape-1-2-years-03.jpg",
+        "./assets/images/Arun/Arun Cape 1-2 years/arun-cape-1-2-years-04.jpg",
+        "./assets/images/Arun/Arun Cape 1-2 years/arun-cape-1-2-years-05.jpg",
+        "./assets/images/Arun/Arun Cape 1-2 years/arun-cape-1-2-years-06.jpg",
+        "./assets/images/Arun/Arun Cape 1-2 years/arun-cape-1-2-years-07.jpg"
+      ]
+    },
+    {
+      "name": "Cardigan with Hood (1–2 years)",
+      "price": 20,
+      "image": "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-01.jpg",
+      "categories": [
+        "Baby Clothes",
+        "Cardigans"
+      ],
+      "gallery": [
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-02.jpg",
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-03.jpg",
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-04.jpg",
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-05.jpg",
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-06.jpg",
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-07.jpg",
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-08.jpg",
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-09.jpg",
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-10.jpg",
+        "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-11.jpg"
+      ]
+    },
+    {
+      "name": "Hooded Jacket with Ears (12–18 months)",
+      "price": 20,
+      "image": "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-01.jpg",
+      "categories": [
+        "Baby Clothes"
+      ],
+      "gallery": [
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-02.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-03.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-04.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-05.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-06.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-07.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-08.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-09.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-10.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-11.jpg",
+        "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-12.jpg"
+      ]
+    },
+    {
+      "name": "Jacket (1–2 years)",
+      "price": 20,
+      "image": "./assets/images/Arun/Arun Jacket 1-2 years/arun-jacket-1-2-years-01.jpg",
+      "categories": [
+        "Baby Clothes"
+      ],
+      "gallery": [
+        "./assets/images/Arun/Arun Jacket 1-2 years/arun-jacket-1-2-years-02.jpg",
+        "./assets/images/Arun/Arun Jacket 1-2 years/arun-jacket-1-2-years-03.jpg",
+        "./assets/images/Arun/Arun Jacket 1-2 years/arun-jacket-1-2-years-04.jpg",
+        "./assets/images/Arun/Arun Jacket 1-2 years/arun-jacket-1-2-years-05.jpg",
+        "./assets/images/Arun/Arun Jacket 1-2 years/arun-jacket-1-2-years-06.jpg"
+      ]
+    },
+    {
+      "name": "Jacket (12–18 months)",
+      "price": 15,
+      "image": "./assets/images/Arun/Arun Jacket 12-18 months/arun-jacket-12-18-months-01.jpg",
+      "categories": [
+        "Baby Clothes"
+      ],
+      "gallery": [
+        "./assets/images/Arun/Arun Jacket 12-18 months/arun-jacket-12-18-months-02.jpg",
+        "./assets/images/Arun/Arun Jacket 12-18 months/arun-jacket-12-18-months-03.jpg",
+        "./assets/images/Arun/Arun Jacket 12-18 months/arun-jacket-12-18-months-04.jpg",
+        "./assets/images/Arun/Arun Jacket 12-18 months/arun-jacket-12-18-months-05.jpg",
+        "./assets/images/Arun/Arun Jacket 12-18 months/arun-jacket-12-18-months-06.jpg",
+        "./assets/images/Arun/Arun Jacket 12-18 months/arun-jacket-12-18-months-07.jpg"
+      ]
+    },
+    {
+      "name": "Blue Jumper (12–18 months)",
+      "price": 15,
+      "image": "./assets/images/Arun/Arun Jumper Blue 12-18 months/arun-jumper-blue-12-18-months-01.jpg",
+      "categories": [
+        "Jumpers"
+      ],
+      "gallery": [
+        "./assets/images/Arun/Arun Jumper Blue 12-18 months/arun-jumper-blue-12-18-months-02.jpg",
+        "./assets/images/Arun/Arun Jumper Blue 12-18 months/arun-jumper-blue-12-18-months-03.jpg",
+        "./assets/images/Arun/Arun Jumper Blue 12-18 months/arun-jumper-blue-12-18-months-04.jpg",
+        "./assets/images/Arun/Arun Jumper Blue 12-18 months/arun-jumper-blue-12-18-months-05.jpg"
+      ]
+    },
+    {
+      "name": "Cream Jumper (12–18 months)",
+      "price": 20,
+      "image": "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-01.jpg",
+      "categories": [
+        "Jumpers"
+      ],
       "featured": true,
-      "description": "A button-front cardigan with a delicate rosebud yoke, knitted for easy layering through the seasons.",
-      "materials": "100% merino wool",
-      "care": "Hand wash cool and dry flat.",
-      "sizes": ["0–6 months", "6–12 months", "1–2 years", "3–4 years"],
-      "stock": 2,
-      "leadTime": "Ready to ship in 3–5 working days"
+      "gallery": [
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-02.jpg",
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-03.jpg",
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-04.jpg",
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-05.jpg",
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-06.jpg",
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-07.jpg",
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-08.jpg",
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-09.jpg",
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-10.jpg",
+        "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-11.jpg"
+      ]
     },
     {
-      "name": "Sailor Stripe Jumper",
-      "price": 39,
-      "image": "./assets/images/sailor-stripe-jumper.svg",
-      "categories": ["Boys", "Jumpers"],
+      "name": "Waistcoat (6–12 months)",
+      "price": 12,
+      "image": "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-01.jpg",
+      "categories": [
+        "Baby Clothes"
+      ],
+      "gallery": [
+        "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-02.jpg",
+        "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-03.jpg",
+        "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-04.jpg",
+        "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-05.jpg",
+        "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-06.jpg",
+        "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-07.jpg",
+        "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-08.jpg"
+      ]
+    },
+    {
+      "name": "Blanket Shawl (100 × 100 cm)",
+      "price": 25,
+      "image": "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-01.jpg",
+      "categories": [
+        "Blankets"
+      ],
       "featured": true,
-      "description": "A classic breton-stripe jumper in soft cotton, made for everyday adventures.",
-      "materials": "100% organic cotton",
-      "care": "Machine wash cool on a gentle cycle, dry flat.",
-      "sizes": ["6–12 months", "1–2 years", "3–4 years", "5–6 years"],
-      "stock": 4,
-      "leadTime": "Ready to ship in 3–5 working days"
+      "gallery": [
+        "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-02.jpg",
+        "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-03.jpg",
+        "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-04.jpg",
+        "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-05.jpg",
+        "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-06.jpg",
+        "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-07.jpg",
+        "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-08.jpg",
+        "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-09.jpg",
+        "./assets/images/Blankets/Blanket Shawl - L100cm W100cm/blanket-shawl-l100cm-w100cm-10.jpg"
+      ]
     },
     {
-      "name": "Cloud Bonnet Set",
-      "price": 28,
-      "image": "./assets/images/cloud-bonnet-set.svg",
-      "categories": ["Girls"],
-      "featured": false,
-      "description": "A feather-light bonnet and mittens set, perfect for new arrivals and christening gifts.",
-      "materials": "Baby alpaca and silk blend",
-      "care": "Hand wash cool and dry flat.",
-      "sizes": ["Newborn", "0–6 months"],
-      "stock": 3,
-      "leadTime": "Ready to ship in 3–5 working days"
+      "name": "Large Striped Blanket (70 × 64 cm)",
+      "price": 15,
+      "image": "./assets/images/Blankets/Blanket Stripes Large - L70cm W64cm/blanket-stripes-large-l70cm-w64cm-01.jpg",
+      "categories": [
+        "Blankets"
+      ],
+      "gallery": [
+        "./assets/images/Blankets/Blanket Stripes Large - L70cm W64cm/blanket-stripes-large-l70cm-w64cm-02.jpg",
+        "./assets/images/Blankets/Blanket Stripes Large - L70cm W64cm/blanket-stripes-large-l70cm-w64cm-03.jpg",
+        "./assets/images/Blankets/Blanket Stripes Large - L70cm W64cm/blanket-stripes-large-l70cm-w64cm-04.jpg",
+        "./assets/images/Blankets/Blanket Stripes Large - L70cm W64cm/blanket-stripes-large-l70cm-w64cm-05.jpg"
+      ]
     },
     {
-      "name": "Woodland Romper",
-      "price": 36,
-      "image": "./assets/images/woodland-romper.svg",
-      "categories": ["Boys"],
-      "featured": false,
-      "description": "A sturdy knitted romper with woodland colourwork and adjustable straps that grow with them.",
-      "materials": "100% merino wool",
-      "care": "Hand wash cool and dry flat.",
-      "sizes": ["0–6 months", "6–12 months", "1–2 years"],
-      "stock": 1,
-      "leadTime": "Ready to ship in 3–5 working days"
+      "name": "Small Striped Blanket (65 × 45 cm)",
+      "price": 10,
+      "image": "./assets/images/Blankets/Blanket Stripes Small - L65cm W45cm/blanket-stripes-small-l65cm-w45cm-01.jpg",
+      "categories": [
+        "Blankets"
+      ],
+      "gallery": [
+        "./assets/images/Blankets/Blanket Stripes Small - L65cm W45cm/blanket-stripes-small-l65cm-w45cm-02.jpg",
+        "./assets/images/Blankets/Blanket Stripes Small - L65cm W45cm/blanket-stripes-small-l65cm-w45cm-03.jpg",
+        "./assets/images/Blankets/Blanket Stripes Small - L65cm W45cm/blanket-stripes-small-l65cm-w45cm-04.jpg",
+        "./assets/images/Blankets/Blanket Stripes Small - L65cm W45cm/blanket-stripes-small-l65cm-w45cm-05.jpg",
+        "./assets/images/Blankets/Blanket Stripes Small - L65cm W45cm/blanket-stripes-small-l65cm-w45cm-06.jpg",
+        "./assets/images/Blankets/Blanket Stripes Small - L65cm W45cm/blanket-stripes-small-l65cm-w45cm-07.jpg",
+        "./assets/images/Blankets/Blanket Stripes Small - L65cm W45cm/blanket-stripes-small-l65cm-w45cm-08.jpg",
+        "./assets/images/Blankets/Blanket Stripes Small - L65cm W45cm/blanket-stripes-small-l65cm-w45cm-09.jpg"
+      ]
     },
     {
-      "name": "Heirloom Bunny",
-      "price": 24,
-      "image": "./assets/images/heirloom-bunny.svg",
-      "categories": ["Toys"],
+      "name": "Blanket with Teddy (70 × 45 cm)",
+      "price": 25,
+      "image": "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-01.jpg",
+      "categories": [
+        "Blankets"
+      ],
       "featured": true,
-      "description": "A hand-stitched bunny with embroidered features and a removable knitted jumper — made to be treasured.",
-      "materials": "Organic cotton with hypoallergenic stuffing",
-      "care": "Spot clean only.",
-      "stock": 1,
-      "leadTime": "Ready to ship in 3–5 working days"
+      "gallery": [
+        "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-02.jpg",
+        "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-03.jpg",
+        "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-04.jpg",
+        "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-05.jpg",
+        "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-06.jpg",
+        "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-07.jpg",
+        "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-08.jpg",
+        "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-09.jpg",
+        "./assets/images/Blankets/Blanket with Teddy - L70cm W45cm/blanket-with-teddy-l70cm-w45cm-10.jpg"
+      ]
     },
     {
-      "name": "Bedtime Bear",
-      "price": 26,
-      "image": "./assets/images/bedtime-bear.svg",
-      "categories": ["Toys"],
+      "name": "Girls' Cardigan with Hat (2 years)",
+      "price": 16,
+      "image": "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-01.jpg",
+      "categories": [
+        "Cardigans"
+      ],
       "featured": true,
-      "description": "A snuggly bedtime companion in dusky pastels, with safe embroidered eyes for little ones.",
-      "materials": "Organic cotton with hypoallergenic stuffing",
-      "care": "Spot clean only.",
-      "stock": 0,
-      "leadTime": "Made to order in 2–3 weeks"
+      "gallery": [
+        "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-02.jpg",
+        "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-03.jpg",
+        "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-04.jpg",
+        "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-05.jpg",
+        "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-06.jpg",
+        "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-07.jpg",
+        "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-08.jpg",
+        "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-09.jpg",
+        "./assets/images/Cardigans/Cardigan Girls with Hat 2 years/cardigan-girls-with-hat-2-years-10.jpg"
+      ]
+    },
+    {
+      "name": "Patchwork Cardigan (18–24 months)",
+      "price": 15,
+      "image": "./assets/images/Cardigans/Cardigan Patches 18-24 months/cardigan-patches-18-24-months-01.jpg",
+      "categories": [
+        "Cardigans"
+      ],
+      "gallery": [
+        "./assets/images/Cardigans/Cardigan Patches 18-24 months/cardigan-patches-18-24-months-02.jpg",
+        "./assets/images/Cardigans/Cardigan Patches 18-24 months/cardigan-patches-18-24-months-03.jpg",
+        "./assets/images/Cardigans/Cardigan Patches 18-24 months/cardigan-patches-18-24-months-04.jpg",
+        "./assets/images/Cardigans/Cardigan Patches 18-24 months/cardigan-patches-18-24-months-05.jpg",
+        "./assets/images/Cardigans/Cardigan Patches 18-24 months/cardigan-patches-18-24-months-06.jpg"
+      ]
+    },
+    {
+      "name": "Pink Cardigan (12–18 months)",
+      "price": 12,
+      "image": "./assets/images/Cardigans/Cardigan Pink 12-18 months/cardigan-pink-12-18-months-01.jpg",
+      "categories": [
+        "Cardigans"
+      ],
+      "gallery": [
+        "./assets/images/Cardigans/Cardigan Pink 12-18 months/cardigan-pink-12-18-months-02.jpg",
+        "./assets/images/Cardigans/Cardigan Pink 12-18 months/cardigan-pink-12-18-months-03.jpg",
+        "./assets/images/Cardigans/Cardigan Pink 12-18 months/cardigan-pink-12-18-months-04.jpg",
+        "./assets/images/Cardigans/Cardigan Pink 12-18 months/cardigan-pink-12-18-months-05.jpg"
+      ]
+    },
+    {
+      "name": "Striped Cardigan (12–18 months)",
+      "price": 15,
+      "image": "./assets/images/Cardigans/Cardigan Striped 12-18 months/cardigan-striped-12-18-months-01.jpg",
+      "categories": [
+        "Cardigans"
+      ],
+      "gallery": [
+        "./assets/images/Cardigans/Cardigan Striped 12-18 months/cardigan-striped-12-18-months-02.jpg",
+        "./assets/images/Cardigans/Cardigan Striped 12-18 months/cardigan-striped-12-18-months-03.jpg",
+        "./assets/images/Cardigans/Cardigan Striped 12-18 months/cardigan-striped-12-18-months-04.jpg",
+        "./assets/images/Cardigans/Cardigan Striped 12-18 months/cardigan-striped-12-18-months-05.jpg"
+      ]
+    },
+    {
+      "name": "Red Dress (6–12 months)",
+      "price": 20,
+      "image": "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-01.jpg",
+      "categories": [
+        "Dresses"
+      ],
+      "featured": true,
+      "gallery": [
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-02.jpg",
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-03.jpg",
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-04.jpg",
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-05.jpg",
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-06.jpg",
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-07.jpg",
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-08.jpg",
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-09.jpg",
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-10.jpg",
+        "./assets/images/Dresses/Red 6-12 Months/red-6-12-months-11.jpg"
+      ]
+    },
+    {
+      "name": "Blue Beanie",
+      "price": 4,
+      "image": "./assets/images/Hats/Blue Beanie/blue-beanie-01.jpg",
+      "categories": [
+        "Hats & Sets"
+      ],
+      "gallery": [
+        "./assets/images/Hats/Blue Beanie/blue-beanie-02.jpg",
+        "./assets/images/Hats/Blue Beanie/blue-beanie-03.jpg"
+      ]
+    },
+    {
+      "name": "Blue Striped Hat",
+      "price": 4,
+      "image": "./assets/images/Hats/Blue Stripes/blue-stripes-01.jpg",
+      "categories": [
+        "Hats & Sets"
+      ],
+      "gallery": [
+        "./assets/images/Hats/Blue Stripes/blue-stripes-02.jpg",
+        "./assets/images/Hats/Blue Stripes/blue-stripes-03.jpg",
+        "./assets/images/Hats/Blue Stripes/blue-stripes-04.jpg"
+      ]
+    },
+    {
+      "name": "Grey Beanie",
+      "price": 4,
+      "image": "./assets/images/Hats/Grey Beanie/grey-beanie-01.jpg",
+      "categories": [
+        "Hats & Sets"
+      ],
+      "gallery": [
+        "./assets/images/Hats/Grey Beanie/grey-beanie-02.jpg",
+        "./assets/images/Hats/Grey Beanie/grey-beanie-03.jpg"
+      ]
+    },
+    {
+      "name": "Hat Set",
+      "price": 6,
+      "image": "./assets/images/Hats/Hat Set/hat-set-01.jpg",
+      "categories": [
+        "Hats & Sets"
+      ],
+      "featured": true,
+      "gallery": [
+        "./assets/images/Hats/Hat Set/hat-set-02.jpg",
+        "./assets/images/Hats/Hat Set/hat-set-03.jpg"
+      ]
+    },
+    {
+      "name": "Paw Hat Set",
+      "price": 8,
+      "image": "./assets/images/Hats/Paw Set/paw-set-01.jpg",
+      "categories": [
+        "Hats & Sets"
+      ],
+      "gallery": [
+        "./assets/images/Hats/Paw Set/paw-set-02.jpg",
+        "./assets/images/Hats/Paw Set/paw-set-03.jpg"
+      ]
+    },
+    {
+      "name": "Red Striped Hat",
+      "price": 4,
+      "image": "./assets/images/Hats/Red Stripes/red-stripes-01.jpg",
+      "categories": [
+        "Hats & Sets"
+      ],
+      "gallery": [
+        "./assets/images/Hats/Red Stripes/red-stripes-02.jpg",
+        "./assets/images/Hats/Red Stripes/red-stripes-03.jpg",
+        "./assets/images/Hats/Red Stripes/red-stripes-04.jpg"
+      ]
+    },
+    {
+      "name": "Sleeveless Jumper (9–18 months)",
+      "price": 8,
+      "image": "./assets/images/Jumpers/Jumper Sleeveless 9-18 months/jumper-sleeveless-9-18-months-01.jpg",
+      "categories": [
+        "Jumpers"
+      ],
+      "gallery": [
+        "./assets/images/Jumpers/Jumper Sleeveless 9-18 months/jumper-sleeveless-9-18-months-02.jpg",
+        "./assets/images/Jumpers/Jumper Sleeveless 9-18 months/jumper-sleeveless-9-18-months-03.jpg",
+        "./assets/images/Jumpers/Jumper Sleeveless 9-18 months/jumper-sleeveless-9-18-months-04.jpg",
+        "./assets/images/Jumpers/Jumper Sleeveless 9-18 months/jumper-sleeveless-9-18-months-05.jpg",
+        "./assets/images/Jumpers/Jumper Sleeveless 9-18 months/jumper-sleeveless-9-18-months-06.jpg"
+      ]
+    },
+    {
+      "name": "Striped Jumper (18–24 months)",
+      "price": 15,
+      "image": "./assets/images/Jumpers/Jumper Stripes 18-24 months/jumper-stripes-18-24-months-01.jpg",
+      "categories": [
+        "Jumpers"
+      ],
+      "featured": true,
+      "gallery": [
+        "./assets/images/Jumpers/Jumper Stripes 18-24 months/jumper-stripes-18-24-months-02.jpg",
+        "./assets/images/Jumpers/Jumper Stripes 18-24 months/jumper-stripes-18-24-months-03.jpg",
+        "./assets/images/Jumpers/Jumper Stripes 18-24 months/jumper-stripes-18-24-months-04.jpg",
+        "./assets/images/Jumpers/Jumper Stripes 18-24 months/jumper-stripes-18-24-months-05.jpg",
+        "./assets/images/Jumpers/Jumper Stripes 18-24 months/jumper-stripes-18-24-months-06.jpg"
+      ]
+    },
+    {
+      "name": "Newborn Cardigan",
+      "price": 8,
+      "image": "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-01.jpg",
+      "categories": [
+        "Newborn",
+        "Cardigans"
+      ],
+      "gallery": [
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-02.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-03.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-04.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-05.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-06.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-07.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-08.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-09.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-10.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-11.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-12.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-13.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-14.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-15.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-16.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-17.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-18.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-19.jpg",
+        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-20.jpg"
+      ]
+    },
+    {
+      "name": "Newborn Cardigan Set",
+      "price": 10,
+      "image": "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-01.jpg",
+      "categories": [
+        "Newborn",
+        "Cardigans"
+      ],
+      "featured": true,
+      "gallery": [
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-02.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-03.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-04.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-05.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-06.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-07.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-08.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-09.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-10.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-11.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-12.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-13.jpg",
+        "./assets/images/Newborn/Newborn Cardigan Set/newborn-cardigan-set-14.jpg"
+      ]
+    },
+    {
+      "name": "Personalised Animal Banner",
+      "price": 35,
+      "priceLabel": "£35–£45",
+      "image": "./assets/images/Other/Personalised Animal Banner/personalised-animal-banner-01.jpg",
+      "categories": [
+        "Toys & Gifts"
+      ],
+      "gallery": [
+        "./assets/images/Other/Personalised Animal Banner/personalised-animal-banner-02.jpg",
+        "./assets/images/Other/Personalised Animal Banner/personalised-animal-banner-03.jpg",
+        "./assets/images/Other/Personalised Animal Banner/personalised-animal-banner-04.jpg",
+        "./assets/images/Other/Personalised Animal Banner/personalised-animal-banner-05.jpg",
+        "./assets/images/Other/Personalised Animal Banner/personalised-animal-banner-06.jpg",
+        "./assets/images/Other/Personalised Animal Banner/personalised-animal-banner-07.jpg",
+        "./assets/images/Other/Personalised Animal Banner/personalised-animal-banner-08.jpg",
+        "./assets/images/Other/Personalised Animal Banner/personalised-animal-banner-09.jpg"
+      ]
+    },
+    {
+      "name": "Roadway Blanket with 6 Cars and Basket (62 × 62 cm)",
+      "price": 40,
+      "image": "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-01.jpg",
+      "categories": [
+        "Blankets",
+        "Toys & Gifts"
+      ],
+      "gallery": [
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-02.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-03.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-04.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-05.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-06.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-07.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-08.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-09.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-10.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-11.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-12.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-13.jpg",
+        "./assets/images/Other/Roadway Blanket, 6 Cars and Basket - L62cm W62cm/roadway-blanket-6-cars-and-basket-l62cm-w62cm-14.jpg"
+      ]
     }
   ]
 }

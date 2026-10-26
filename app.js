@@ -55,6 +55,14 @@ const renderNav = (categories) => {
 
     link.href = `./category.html?category=${encodeURIComponent(category.slug)}`;
     link.textContent = category.name;
+
+    if (
+      currentPage === "category" &&
+      new URLSearchParams(window.location.search).get("category") === category.slug
+    ) {
+      link.setAttribute("aria-current", "page");
+    }
+
     item.append(link);
 
     return item;
@@ -93,12 +101,15 @@ const renderNav = (categories) => {
 
 const createProductCard = (product) => {
   const card = document.createElement("article");
+  const link = document.createElement("a");
   const image = document.createElement("img");
   const meta = document.createElement("div");
   const title = document.createElement("h3");
   const price = document.createElement("p");
 
   card.className = "product-card";
+  link.className = "product-card-link";
+  link.href = `./product.html?product=${encodeURIComponent(slugify(product.name))}`;
   meta.className = "product-meta";
   price.className = "product-price";
 
@@ -106,7 +117,7 @@ const createProductCard = (product) => {
   image.alt = product.name;
   image.loading = "lazy";
   title.textContent = product.name;
-  price.textContent = formatPrice(product.price);
+  price.textContent = product.priceLabel || formatPrice(product.price);
 
   meta.append(title, price);
 
@@ -129,7 +140,8 @@ const createProductCard = (product) => {
     meta.append(note);
   }
 
-  card.append(image, meta);
+  link.append(image, meta);
+  card.append(link);
 
   return card;
 };
@@ -190,17 +202,52 @@ const loadCatalog = async () => {
 
   const payload = await response.json();
   const configuredCategories = Array.isArray(payload) ? [] : payload.categories || [];
+  const heroFeature = Array.isArray(payload) ? null : payload.heroFeature;
   const products = (Array.isArray(payload) ? payload : payload.products || []).map((product) => ({
     ...product,
     categorySlugs: product.categories.map((category) => slugify(category)),
   }));
 
-  return { configuredCategories, products };
+  return { configuredCategories, heroFeature, products };
 };
 
-const renderHomePage = (products, categories) => {
+const selectHeroProduct = (products, heroFeature) => {
+  const featuredProducts = products.filter((product) => product.featured);
+  const candidates = featuredProducts.length ? featuredProducts : products;
+
+  if (heroFeature?.mode === "random") {
+    return candidates[Math.floor(Math.random() * candidates.length)];
+  }
+
+  if (heroFeature?.mode === "preset" && heroFeature.product) {
+    const selectedProduct = products.find(
+      (product) => slugify(product.name) === heroFeature.product,
+    );
+
+    if (selectedProduct) {
+      return selectedProduct;
+    }
+  }
+
+  return candidates[0];
+};
+
+const renderHomePage = (products, categories, heroFeature) => {
   const featuredGrid = document.querySelector("#featured-grid");
   const categoryGrid = document.querySelector("#shop-categories");
+  const heroHighlight = document.querySelector("#hero-highlight");
+  const heroImage = document.querySelector("#hero-highlight-image");
+  const heroTitle = document.querySelector("#hero-highlight-title");
+  const featuredProduct = selectHeroProduct(products, heroFeature);
+
+  if (featuredProduct && heroHighlight && heroImage && heroTitle) {
+    heroHighlight.href = `./product.html?product=${encodeURIComponent(
+      slugify(featuredProduct.name),
+    )}`;
+    heroImage.src = featuredProduct.image;
+    heroImage.alt = featuredProduct.name;
+    heroTitle.textContent = featuredProduct.name;
+  }
 
   if (featuredGrid) {
     const featuredCards = products
@@ -212,8 +259,8 @@ const renderHomePage = (products, categories) => {
         ? featuredCards
         : [
             createMessageCard(
-              "Featured products coming soon",
-              "Mark products as featured in the catalogue data to highlight them here.",
+              "No featured products available",
+              "There are no featured products to show right now.",
             ),
           ]),
     );
@@ -228,8 +275,8 @@ const renderHomePage = (products, categories) => {
         ? cards
         : [
             createMessageCard(
-              "Categories coming soon",
-              "Add categories in the catalogue data to show navigation here.",
+              "No categories available",
+              "There are no product categories to show right now.",
             ),
           ]),
     );
@@ -275,17 +322,100 @@ const renderCategoryPage = (products, categories) => {
     const copy = empty.querySelector("p");
 
     if (heading) {
-      heading.textContent = "Products coming soon";
+      heading.textContent = "No products available";
     }
 
     if (copy) {
       copy.textContent =
-        "This category is ready for new additions as the catalogue grows.";
+        "There are no products listed in this collection right now.";
     }
   }
 
   document.title = `Bubbaknits | ${category.name}`;
   setBusyState(grid, false);
+};
+
+const renderProductPage = (products, categories) => {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("product");
+  const title = document.querySelector("#product-title");
+  const summary = document.querySelector("#product-summary");
+  const detail = document.querySelector("#product-detail");
+  const empty = document.querySelector("#product-empty");
+
+  if (!slug || !title || !summary || !detail || !empty) {
+    return;
+  }
+
+  const product = products.find((entry) => slugify(entry.name) === slug);
+
+  if (!product) {
+    title.textContent = "Product not found";
+    summary.textContent = "The requested product could not be found.";
+    detail.hidden = true;
+    empty.hidden = false;
+    document.title = "Bubbaknits | Product not found";
+    return;
+  }
+
+  const image = document.querySelector("#product-image");
+  const count = document.querySelector("#product-image-count");
+  const previous = document.querySelector("#product-image-previous");
+  const next = document.querySelector("#product-image-next");
+  const price = document.querySelector("#product-price");
+  const categoryList = document.querySelector("#product-categories");
+  const collectionLink = document.querySelector("#product-collection-link");
+  const gallery = [product.image, ...(product.gallery || [])];
+  let currentImage = 0;
+
+  title.textContent = product.name;
+  summary.textContent = product.description || "A hand-knitted piece, made with care.";
+  price.textContent = product.priceLabel || formatPrice(product.price);
+  image.alt = `${product.name} — photo 1 of ${gallery.length}`;
+
+  const showImage = (index) => {
+    currentImage = (index + gallery.length) % gallery.length;
+    image.src = gallery[currentImage];
+    image.alt = `${product.name} — photo ${currentImage + 1} of ${gallery.length}`;
+    count.textContent = `${currentImage + 1} of ${gallery.length}`;
+  };
+
+  showImage(0);
+  previous.disabled = gallery.length < 2;
+  next.disabled = gallery.length < 2;
+  previous.addEventListener("click", () => showImage(currentImage - 1));
+  next.addEventListener("click", () => showImage(currentImage + 1));
+
+  const categoriesForProduct = product.categorySlugs
+    .map((slug) => categories.find((category) => category.slug === slug))
+    .filter(Boolean);
+
+  categoryList.replaceChildren(
+    ...categoriesForProduct.map((category) => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+
+      link.href = `./category.html?category=${encodeURIComponent(category.slug)}`;
+      link.textContent = category.name;
+      item.append(link);
+
+      return item;
+    }),
+  );
+
+  const collection = categoriesForProduct[0];
+
+  if (collection) {
+    collectionLink.href = `./category.html?category=${encodeURIComponent(collection.slug)}`;
+    collectionLink.textContent = `Back to ${collection.name}`;
+  } else {
+    collectionLink.href = "./index.html";
+    collectionLink.textContent = "Back to all products";
+  }
+
+  detail.hidden = false;
+  empty.hidden = true;
+  document.title = `Bubbaknits | ${product.name}`;
 };
 
 const renderLoadError = () => {
@@ -307,8 +437,8 @@ const renderLoadError = () => {
     if (categoryGrid) {
       categoryGrid.replaceChildren(
         createMessageCard(
-          "Categories unavailable",
-          "Category links will appear here once the catalogue loads correctly.",
+          "No categories available",
+          "There are no product categories to show right now.",
         ),
       );
       setBusyState(categoryGrid, false);
@@ -348,6 +478,40 @@ const renderLoadError = () => {
       if (copy) {
         copy.textContent =
           "The product catalogue could not be loaded for this page.";
+      }
+    }
+  }
+
+  if (page === "product") {
+    const title = document.querySelector("#product-title");
+    const summary = document.querySelector("#product-summary");
+    const detail = document.querySelector("#product-detail");
+    const empty = document.querySelector("#product-empty");
+
+    if (title) {
+      title.textContent = "Catalogue unavailable";
+    }
+
+    if (summary) {
+      summary.textContent =
+        "We couldn't load this product right now. Please try again shortly.";
+    }
+
+    if (detail) {
+      detail.hidden = true;
+    }
+
+    if (empty) {
+      empty.hidden = false;
+      const heading = empty.querySelector("h2");
+      const copy = empty.querySelector("p");
+
+      if (heading) {
+        heading.textContent = "Product unavailable";
+      }
+
+      if (copy) {
+        copy.textContent = "The product catalogue could not be loaded for this page.";
       }
     }
   }
@@ -468,17 +632,21 @@ const init = async () => {
   }
 
   try {
-    const { configuredCategories, products } = await loadCatalog();
+    const { configuredCategories, heroFeature, products } = await loadCatalog();
     const categories = buildCategories(products, configuredCategories);
 
     renderNav(categories);
 
     if (page === "home") {
-      renderHomePage(products, categories);
+      renderHomePage(products, categories, heroFeature);
     }
 
     if (page === "category") {
       renderCategoryPage(products, categories);
+    }
+
+    if (page === "product") {
+      renderProductPage(products, categories);
     }
   } catch (error) {
     console.error(error);
