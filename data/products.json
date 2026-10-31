@@ -4,6 +4,7 @@
     "product": "cream-jumper-12-18-months"
   },
   "categories": [
+    "Aran",
     "Baby Clothes",
     "Blankets",
     "Cardigans",
@@ -19,7 +20,7 @@
       "price": 20,
       "image": "./assets/images/Arun/Arun Cape 1-2 years/arun-cape-1-2-years-01.jpg",
       "categories": [
-        "Baby Clothes"
+        "Aran"
       ],
       "gallery": [
         "./assets/images/Arun/Arun Cape 1-2 years/arun-cape-1-2-years-02.jpg",
@@ -35,8 +36,7 @@
       "price": 20,
       "image": "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-01.jpg",
       "categories": [
-        "Baby Clothes",
-        "Cardigans"
+        "Aran"
       ],
       "gallery": [
         "./assets/images/Arun/Arun Cardigan with Hood 1-2 years/arun-cardigan-with-hood-1-2-years-02.jpg",
@@ -56,7 +56,7 @@
       "price": 20,
       "image": "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-01.jpg",
       "categories": [
-        "Baby Clothes"
+        "Aran"
       ],
       "gallery": [
         "./assets/images/Arun/Arun Hooded Jacket with Ears 12-18 months/arun-hooded-jacket-with-ears-12-18-months-02.jpg",
@@ -77,7 +77,7 @@
       "price": 20,
       "image": "./assets/images/Arun/Arun Jacket 1-2 years/arun-jacket-1-2-years-01.jpg",
       "categories": [
-        "Baby Clothes"
+        "Aran"
       ],
       "gallery": [
         "./assets/images/Arun/Arun Jacket 1-2 years/arun-jacket-1-2-years-02.jpg",
@@ -92,7 +92,7 @@
       "price": 15,
       "image": "./assets/images/Arun/Arun Jacket 12-18 months/arun-jacket-12-18-months-01.jpg",
       "categories": [
-        "Baby Clothes"
+        "Aran"
       ],
       "gallery": [
         "./assets/images/Arun/Arun Jacket 12-18 months/arun-jacket-12-18-months-02.jpg",
@@ -108,7 +108,7 @@
       "price": 15,
       "image": "./assets/images/Arun/Arun Jumper Blue 12-18 months/arun-jumper-blue-12-18-months-01.jpg",
       "categories": [
-        "Jumpers"
+        "Aran"
       ],
       "gallery": [
         "./assets/images/Arun/Arun Jumper Blue 12-18 months/arun-jumper-blue-12-18-months-02.jpg",
@@ -122,7 +122,7 @@
       "price": 20,
       "image": "./assets/images/Arun/Arun Jumper Cream 12-18 months/arun-jumper-cream-12-18-months-01.jpg",
       "categories": [
-        "Jumpers"
+        "Aran"
       ],
       "featured": true,
       "gallery": [
@@ -143,7 +143,7 @@
       "price": 12,
       "image": "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-01.jpg",
       "categories": [
-        "Baby Clothes"
+        "Aran"
       ],
       "gallery": [
         "./assets/images/Arun/Arun Waistcoat 6-12 months/arun-waistcoat-6-12-months-02.jpg",
@@ -418,33 +418,33 @@
       ]
     },
     {
-      "name": "Newborn Cardigan",
+      "name": "Cardigan",
       "price": 8,
-      "image": "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-01.jpg",
+      "image": "./assets/images/BabyClothes/Cardigan/newborn-cardigan-01.jpg",
       "categories": [
-        "Newborn",
+        "Baby Clothes",
         "Cardigans"
       ],
       "gallery": [
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-02.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-03.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-04.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-05.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-06.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-07.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-08.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-09.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-10.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-11.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-12.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-13.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-14.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-15.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-16.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-17.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-18.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-19.jpg",
-        "./assets/images/Newborn/Newborn Cardigan/newborn-cardigan-20.jpg"
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-02.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-03.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-04.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-05.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-06.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-07.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-08.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-09.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-10.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-11.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-12.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-13.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-14.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-15.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-16.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-17.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-18.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-19.jpg",
+        "./assets/images/BabyClothes/Cardigan/newborn-cardigan-20.jpg"
       ]
     },
     {
